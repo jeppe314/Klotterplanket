@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { useUser } from "@auth0/nextjs-auth0/client"
 
 const BlogPostForm = () => {
+    const { user } = useUser()
+    console.log("form: " + user)
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
 
