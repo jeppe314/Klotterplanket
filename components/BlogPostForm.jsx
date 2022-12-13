@@ -4,7 +4,6 @@ import { useUser } from "@auth0/nextjs-auth0/client"
 
 const BlogPostForm = () => {
     const { user } = useUser()
-    console.log("form: " + user)
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
 
@@ -18,6 +17,8 @@ const BlogPostForm = () => {
             .post("/api/posts/add", {
                 title: title,
                 content: content,
+                author: user.given_name,
+                image: user.picture,
             })
             .then((response) => {
                 console.log("Blog post submitted successfully:", response.data)
