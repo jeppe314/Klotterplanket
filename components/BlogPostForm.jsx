@@ -33,23 +33,17 @@ const BlogPostForm = () => {
     return (
         <div className="blogpostform">
             <form onSubmit={handleSubmit}>
-                <label>
-                    Title:
-                    <input
-                        type="text"
-                        value={title}
-                        onChange={(event) => setTitle(event.target.value)}
-                    />
-                </label>
-                <label>
-                    Content:
-                    <textarea
-                        value={content}
-                        onChange={(event) => setContent(event.target.value)}
-                        className="content"
-                    />
-                </label>
-                <button type="submit">Submit</button>
+                <input
+                    type="text"
+                    value={title}
+                    onChange={(event) => setTitle(event.target.value)}
+                />
+                <textarea
+                    value={content}
+                    onChange={(event) => setContent(event.target.value)}
+                    className="content"
+                />
+                <button type="submit">Post</button>
             </form>
         </div>
     )
