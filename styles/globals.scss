@@ -65,15 +65,15 @@ a {
         display: flex;
         flex: 1;
         gap: 1em;
-        div {
-            flex: 1;
-        }
 
         .blogposts {
             overflow: scroll;
-            display: flex;
-            flex-direction: column;
+            // display: flex;
+            // flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 1em;
+            flex: 3;
             // padding: 0 2em;
         }
 
@@ -88,15 +88,16 @@ a {
             .post-header {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                // height:100%;
 
                 .post-title {
-                    flex: 3;
                 }
 
                 .post-author {
-                    flex:1;
                     display: flex;
-                    gap:1em;
+                    gap: 1em;
                     align-items: center;
                     img {
                         border-radius: 50%;
@@ -117,7 +118,7 @@ a {
         }
 
         .blogpostform {
-            // margin: 20px;
+            flex: 1;
             padding: 20px;
             border: 1px solid #ccc;
             box-shadow: 2px 2px 2px #ccc;

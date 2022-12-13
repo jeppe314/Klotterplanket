@@ -1,4 +1,3 @@
-import { User } from "@auth0/auth0-react"
 import Image from "next/image"
 import React from "react"
 
@@ -22,7 +21,6 @@ export const BlogPost = ({ title, content, author, image }) => {
                 </div>
             </div>
             <p>{content}</p>
-            {/* <p>{author}</p> */}
         </div>
     )
 }

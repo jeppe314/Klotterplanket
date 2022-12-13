@@ -1,18 +1,20 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { useUser } from "@auth0/nextjs-auth0/client"
+// import Post from "../models/postModel"
 
 const BlogPostForm = () => {
-    const { user } = useUser()
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
+    const { user } = useUser()
+
+    // useEffect(() => {
+    //     Post.watch("change", console.log("NU HÄNDER NÅGGI"))
+    // }, [])
 
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log("NU KÖR VI")
-
-        // You can add code here to submit the blog post to a server or database.
-        // For the purposes of this example, we will just log the values to the console.
         axios
             .post("/api/posts/add", {
                 title: title,

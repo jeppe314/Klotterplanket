@@ -4,11 +4,10 @@ import BlogPostForm from "../components/BlogPostForm"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import Post from "../models/postModel"
 import connectMongo from "../utils/connectMongo"
+import { useEffect } from "react"
 
 export default function Home({ posts }) {
     const { user } = useUser()
-    console.log(user)
-
     return (
         <div className="container">
             <Header />
@@ -22,7 +21,9 @@ export default function Home({ posts }) {
 
 export const getServerSideProps = async () => {
     try {
+        console.log("CONNECTING SERVERSIDE")
         await connectMongo()
+        console.log("CONNECTED SERVERSIDE")
         const posts = await Post.find()
 
         return {
