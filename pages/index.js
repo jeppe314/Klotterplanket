@@ -6,8 +6,8 @@ import Post from "../models/postModel"
 import connectMongo from "../utils/connectMongo"
 
 export default function Home({ posts }) {
-    
     const { user } = useUser()
+    console.log(user)
 
     return (
         <div className="container">

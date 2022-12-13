@@ -17,7 +17,7 @@ const BlogPostForm = () => {
             .post("/api/posts/add", {
                 title: title,
                 content: content,
-                author: user.given_name,
+                author: user.given_name ? user.given_name : user.nickname,
                 image: user.picture,
             })
             .then((response) => {
