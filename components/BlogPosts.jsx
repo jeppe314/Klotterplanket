@@ -1,20 +1,17 @@
-import React from "react"
 import { BlogPost } from "./BlogPost"
+import { nanoid } from "nanoid"
 
-export const BlogPosts = () => {
-    return (
-        <div className="blogposts">
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />{" "}
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-            <BlogPost title="HEJSAN" content="Detta är en blogpost" />
-        </div>
-    )
+export const BlogPosts = ({ posts }) => {
+    console.log(posts)
+    const blogpostsEl = posts.map((post) => (
+        <BlogPost
+            key={nanoid()}
+            title={post.title}
+            content={post.content}
+            author={post.author}
+            image={post.image}
+        />
+    ))
+
+    return <div className="blogposts">{blogpostsEl}</div>
 }
