@@ -3,11 +3,11 @@ import { BlogPosts } from "../components/BlogPosts"
 import BlogPostForm from "../components/BlogPostForm"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import Post from "../models/postModel"
-import connectMongo from "../utils/connectMongo"
-import { useEffect } from "react"
+import connectMongo from "../mongoose"
 
 export default function Home({ posts }) {
     const { user } = useUser()
+
     return (
         <div className="container">
             <Header />
@@ -21,9 +21,8 @@ export default function Home({ posts }) {
 
 export const getServerSideProps = async () => {
     try {
-        console.log("CONNECTING SERVERSIDE")
-        await connectMongo()
-        console.log("CONNECTED SERVERSIDE")
+
+        connectMongo()
         const posts = await Post.find()
 
         return {

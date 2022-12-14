@@ -3,7 +3,10 @@ $baseLight: #1d2c36;
 $primary: #15616d;
 $secondary: #ffecd1;
 $orange: #ff7d00;
+$orange2: #ff8b1f;
+$orange3: #ff9633;
 $red: #78290f;
+$gradient: linear-gradient(45deg, $orange 0%, $orange2 35%, $orange 100%);
 
 html,
 body {
@@ -42,6 +45,7 @@ a {
         justify-content: space-between;
         align-items: center;
         background-color: $orange;
+        background: $gradient;
 
         .logo {
             h1 {
@@ -50,7 +54,7 @@ a {
         }
 
         .nav {
-            background: rgba(181, 198, 204, 0.367);
+            background: $orange3;
             padding: 1em;
             border-radius: 10px;
             display: flex;
@@ -58,6 +62,8 @@ a {
             min-width: 10%;
             justify-content: center;
             gap: 1em;
+            border: 1px solid $base;
+            box-shadow: 1px 1px 1px $base;
             img {
                 border-radius: 50%;
             }
@@ -90,6 +96,7 @@ a {
             box-shadow: 2px 2px 2px $base;
             border-radius: 5px;
             background-color: $orange;
+            background: $gradient;
 
             .post-header {
                 display: flex;
@@ -161,11 +168,11 @@ a {
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
-                transition:all .3s;
+                transition: all 0.3s;
 
                 &:hover {
                     background-color: $baseLight;
-                    font-size:1.5em;
+                    font-size: 1.5em;
                 }
             }
             textarea.content {

@@ -36,10 +36,12 @@ const BlogPostForm = () => {
                 <input
                     type="text"
                     value={title}
+                    placeholder="Rubrik"
                     onChange={(event) => setTitle(event.target.value)}
                 />
                 <textarea
                     value={content}
+                    placeholder="Vad har du på hjärtat?"
                     onChange={(event) => setContent(event.target.value)}
                     className="content"
                 />
